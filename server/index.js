@@ -5,6 +5,17 @@ const axios = require('axios');
  
 const {PORT, CONNECTION_STRING } = process.env;
  
+const { Sequelize } = require("sequelize");
+ 
+const sequelize = new Sequelize(CONNECTION_STRING, {
+   dialect: "postgres",
+   dialectOptions: {
+       ssl: {
+           rejectUnauthorized: false
+       }
+   }
+});
+
 const app = express();
  
 app.use(express.json());

@@ -1,27 +1,17 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import React from 'react';
+import Inventory from './components/Inventory';
+import Header from './components/Header';
+import Footer from './components/Footer';
  
 function App() {
  
-   const [inventory, setInventory] = useState([])
- 
-   useEffect(() => {
-       axios.get('/inventory')
-       .then((res) => {
-           console.log(res.data)
-           setInventory(res.data);
-       })
-       .catch((err) => console.log(err));
-   }, []);
- 
-   const displayRecords = inventory.map((inventoryInfo) => {
-       const { album_name } = inventoryInfo;
-   })
-
+   
  
    return (
-       <div>
-           <p>work in progress</p>
+       <div className='App'>
+        <Header />
+        <Inventory />
+        <Footer />
        </div>
    )
  

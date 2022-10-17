@@ -14,7 +14,7 @@ const sequelize = new Sequelize(CONNECTION_STRING, {
 module.exports = {
  
 getInventory: (req, res) => {
-   sequelize.query(`SELECT album_name FROM vinyl_records;`)
+   sequelize.query(`SELECT vinyl_id, album_name, artist_name, price FROM vinyl_records;`)
    .then((dbResult) => {
        console.log(dbResult[0])
        res.status(200).send(dbResult[0])

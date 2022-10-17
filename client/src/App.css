@@ -1,38 +1,78 @@
-.App {
-  text-align: center;
+@font-face {
+  font-family: "Raleway";
+  src: local("Raleway"),
+    url("https://fonts.googleapis.com/css2?family=Raleway&display=swap") format("truetype");
+  font-weight: normal;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+h1, h2 {
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.header-top {
+  background: #2d2d2d;
+  display: flex;
+  height: 250px;
+  justify-content:space-between;
+  align-items: flex-end;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+.logo {
+  height: 200px;
+  margin-bottom: 20px;
+}
+
+.search-box {
+  height: 30px;
+  width: 400px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.profile-icon {
+  height: 40px;
+}
+
+.shopping-cart {
+  height: 30px;
+}
+
+.right-header-items {
+  display: flex;
+  justify-content: flex-end;
+  gap: 20px;
+  margin-right: 50px;
+}
+
+.header-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  background: #d04228;
+  font-family: Raleway;
+}
+
+.display-album {
+  align-items: center;
+}
+
+.display-inventory {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  gap: 30px;
+  margin-top: 50px;
+  justify-content: space-around;
+}
+
+.Footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  background: #2d2d2d;
+  font-family: Raleway;
+}
+
+.social-media-icons {
+  height: 200px;
 }
