@@ -7,6 +7,7 @@
 
 h1, h2 {
   color: white;
+  font-family: Raleway;
 }
 
 .header-top {
@@ -36,6 +37,7 @@ h1, h2 {
 
 .shopping-cart {
   height: 30px;
+  margin-top: 5px;
 }
 
 .right-header-items {
@@ -63,16 +65,47 @@ h1, h2 {
   gap: 30px;
   margin-top: 50px;
   justify-content: space-around;
+  margin-bottom: 50px;
+}
+
+button {
+  background: #d04228;
+  color: white;
+  border-radius: 5px;
+  border: none;
+  padding: 4px 4px;
+}
+
+
+button:hover {
+  background: #ff5031
 }
 
 .Footer {
   display: flex;
-  align-items: center;
+  align-items: baseline;
   justify-content: space-evenly;
   background: #2d2d2d;
   font-family: Raleway;
 }
 
+.footer-contact {
+  display: block;
+}
+
+.footer-social {
+  display: block;
+}
+
 .social-media-icons {
   height: 200px;
+  margin-top: -80px;
+}
+
+h2 {
+  margin-top: 50px;
+}
+
+.Footer p {
+  color: white;
 }

@@ -22,9 +22,11 @@ app.use(express.json());
 app.use(cors());
  
 const { seed } = require('./seed');
-const { getInventory } = require('./controller');
+const { getInventory, addToCart, getCart } = require('./controller');
  
 app.post('/seed', seed);
 app.get('/inventory', getInventory);
+app.post('/cart', addToCart);
+app.get('/showCart', getCart);
  
 app.listen(PORT, () => console.log(`All good on port ${ PORT }`));

@@ -15,6 +15,8 @@ module.exports = {
    seed: (req, res) => {
        sequelize.query(`
  
+        drop table if exists users, shopping_cart, vinyl_records, shopping_cart_users CASCADE;
+
        create table users (
            user_id serial primary key,
            username varchar(100),
@@ -22,26 +24,27 @@ module.exports = {
            email varchar(200)
        );
  
-       create table shopping_cart (
-           cart_id serial primary key,
-           user_id integer references users(user_id)
-       );
- 
        create table vinyl_records (
            vinyl_id serial primary key,
-           album_name varchar(200),
-           artist_name varchar(200),
+           album_name varchar(200) unique,
+           artist_name varchar(200) unique,
            version varchar(200),
            genre varchar(200),
            description varchar(200),
-           price varchar(100)
+           price varchar(100)  
        );
+
+       create table shopping_cart (
+        cart_id serial primary key,
+        fk_vinyl_id integer,
+        quantity integer,
+        FOREIGN KEY (fk_vinyl_id) REFERENCES vinyl_records(vinyl_id)
+    );
  
-       create table shopping_cart_items (
+       create table shopping_cart_users (
            id serial primary key,
-           vinyl_id integer references vinyl_records(vinyl_id),
-           shopping_cart_id integer references shopping_cart(cart_id),
-           quantity integer
+           user_id integer references users(user_id),
+           cart_id integer references shopping_cart(cart_id)
        );
  
        insert into vinyl_records (vinyl_id, album_name, artist_name, version, genre, description, price)
