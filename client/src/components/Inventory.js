@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import '../App.css';
+import Header from './Header';
+import Footer from './Footer';
+
  
 function Inventory() {
  
    const [inventory, setInventory] = useState([])
-   const [cart, setCart] = useState([])
  
    useEffect(() => {
        axios.get('/inventory')
@@ -33,14 +35,18 @@ function Inventory() {
             <p key={ album_name }>{ album_name }</p>
             <p key={ artist_name }>{ artist_name }</p>
             <p key={ vinyl_id }>{ price }</p>
-            <button onClick={() => addToCart(vinyl_id)}>ADD TO CART</button>
+            <button className='inventory-button' onClick={() => addToCart(vinyl_id)}>ADD TO CART</button>
         </div>
        )
    })
  
    return (
-       <div className='display-inventory'>
-           {displayRecords}
+        <div className='landing-page'>
+            <Header />
+            <div className='display-inventory'>
+            {displayRecords}
+            </div>
+            <Footer />
        </div>
    )
  

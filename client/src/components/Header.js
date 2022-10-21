@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import '../App.css';
 import PSR from '../images/PSR.png';
 import cart from '../images/cart.png';
@@ -13,13 +14,25 @@ function Header() {
                     <div className='right-header-items'>
                     <input className='search-box' placeholder='SEARCH...' />
                     <img className='profile-icon' src={ ICON } alt='profile image' />
+                    <Link to='/cart'>
                     <img className='shopping-cart' src={ cart } alt='shopping cart' />
+                    </Link>
                     </div>
             </div>
             <div className='header-bottom'>
-            <h1>HOME</h1>
-            <h1>GENRE</h1>
-            <h1>ABOUT</h1>
+            <Link to='/'>
+            <a>HOME</a>
+            </Link>
+            <div className='dropdown'>
+            <button className='dropbtn'>GENRE</button>
+            <div className='dropdown-content'>
+                <a href="#">ROCK</a>
+                <a href="#">RAP</a>
+                <a href="#">SOUL</a>
+                <a href="#">LATIN</a>
+            </div>
+            </div>
+            <a>ABOUT</a>
             </div>
         </div>
     )
