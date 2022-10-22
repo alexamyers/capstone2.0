@@ -10,6 +10,10 @@ a, h2, button {
   font-family: Raleway;
 }
 
+
+
+
+
 /* LOGO, SEARCH BAR, ICONS AND HEADER BACKGROUND ABOVE NAV BAR */
 .header-top {
   background: #2d2d2d;
@@ -60,6 +64,9 @@ a, h2, button {
 }
 
 
+
+
+
 /* DROPDOWN MENU FOR GENRE BUTTON  */
 .dropbtn {
   background-color: #d04228;
@@ -101,9 +108,15 @@ a, h2, button {
 
 
 
+
 /* INVENTORY DISPLAYED ON LANDING PAGE */
 .display-album {
   align-items: center;
+}
+
+.display-album img {
+  height: 200px;
+  width: 200px;
 }
 
 .display-inventory {
@@ -126,6 +139,34 @@ a, h2, button {
 .inventory-button:hover {
   background: #ff5031
 }
+
+
+
+
+
+/* INVENTORY AND ITEMS  DISPLAYED ON  SHOPPING CART */
+.info-form {
+  float: left;
+  display: flex;
+  flex-direction: column;
+}
+
+.display-cart {
+  display: flex;
+  flex-direction: column;
+  /* float: right; */
+  align-items: center;
+}
+
+.display-cart img {
+  height: 200px;
+  width: 200px;
+}
+
+.quantity-container {
+  display: inline-block;
+}
+
 
 
 

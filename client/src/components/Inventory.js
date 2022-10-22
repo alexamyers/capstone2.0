@@ -28,10 +28,11 @@ function Inventory() {
 
 
    const displayRecords = inventory.map((inventoryInfo) => {
-       const { vinyl_id, album_name, artist_name, price } = inventoryInfo;
+       const { vinyl_id, album_name, artist_name, price, image } = inventoryInfo;
 
        return(
         <div className='display-album'>
+            <img key={ vinyl_id } src= {image } alt='album cover' />
             <p key={ album_name }>{ album_name }</p>
             <p key={ artist_name }>{ artist_name }</p>
             <p key={ vinyl_id }>{ price }</p>
