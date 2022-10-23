@@ -20,9 +20,7 @@ function Header() {
                     </div>
             </div>
             <div className='header-bottom'>
-            <Link to='/'>
-            <a>HOME</a>
-            </Link>
+            <Link to='/'>HOME</Link>
             <div className='dropdown'>
             <button className='dropbtn'>GENRE</button>
             <div className='dropdown-content'>
@@ -32,7 +30,7 @@ function Header() {
                 <a href="#">LATIN</a>
             </div>
             </div>
-            <a>ABOUT</a>
+            <Link to='/about'>ABOUT</Link>
             </div>
         </div>
     )

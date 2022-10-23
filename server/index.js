@@ -29,8 +29,8 @@ app.get('/inventory', getInventory);
 app.post('/cart', addToCart);
 app.get('/showCart', getCart);
 app.delete('/showCart/:id', deleteFromCart);
-app.put('/showCart/:id/:quantity', increaseQuantity)
-app.put('/showCart/:id/:quantity', decreaseQuantity)
+app.put('/showCartIncrease/:id/:quantity', increaseQuantity)
+app.put('/showCartDecrease/:id/:quantity', decreaseQuantity)
 
  
 app.listen(PORT, () => console.log(`All good on port ${ PORT }`));

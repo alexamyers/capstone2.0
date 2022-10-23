@@ -44,6 +44,10 @@ a, h2, button {
   margin-top: 5px;
 }
 
+.shopping-cart:hover {
+  cursor: default;
+}
+
 .right-header-items {
   display: flex;
   justify-content: flex-end;
@@ -59,8 +63,12 @@ a, h2, button {
   font-family: Raleway;
 }
 
-.header-bottom a {
+.header-bottom a, button {
   text-decoration: none;
+}
+
+.header-bottom:hover a, button {
+  cursor: default;
 }
 
 
@@ -98,7 +106,7 @@ a, h2, button {
 }
 
 .dropdown-content a:hover {
-  background-color: #f1f1f1
+  background-color: #f1f1f1;
 }
 
 .dropdown:hover .dropdown-content {
@@ -149,30 +157,97 @@ a, h2, button {
   float: left;
   display: flex;
   flex-direction: column;
+  margin-left: 50px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.info-form input, label {
+  margin-top: 5px;
+}
+
+.info-form button {
+  margin-top: 10px;
+  background: #d04228;
+  color: white;
+  border-radius: 5px;
+  border: none;
+  padding: 4px 4px;
 }
 
 .display-cart {
+  border: solid black 2px;
+  width: 500px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 10px;
+}
+
+.cart-items-container {
   display: flex;
   flex-direction: column;
-  /* float: right; */
   align-items: center;
 }
 
-.display-cart img {
-  height: 200px;
-  width: 200px;
+.display-cart-info {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  margin-left: 10px;
+}
+
+.cart-image {
+  height: 100px;
+  width: 100px;
+}
+
+.checkout-buttons {
+  background: #d04228;
+  color: white;
+  border-radius: 5px;
+  border: none;
+  padding: 4px 4px;
+}
+
+.checkout-buttons:hover {
+  background: #ff5031
 }
 
 .quantity-container {
-  display: inline-block;
+  float: left;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
 }
 
+.quantity-container button {
+  padding: 7px;
+}
 
+.quantity-container button p {
+  height: 50px;
+}
+
+.delete-button {
+  float: right;
+  background: #d04228;
+  color: white;
+  border-radius: 5px;
+  border: none;
+  padding: 4px 4px;
+}
+
+.delete-button:hover {
+  background: #ff5031
+}
 
 
 
 /* FOOTER AND SOCIAL MEDIA ICONS */
 .Footer {
+  position: relative;
+  width: 100%;
   display: flex;
   align-items: baseline;
   justify-content: space-evenly;
@@ -197,6 +272,11 @@ h2 {
   margin-top: 50px;
 }
 
+h2:hover {
+  cursor: default;
+}
+
 .Footer p {
   color: white;
 }
+

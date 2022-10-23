@@ -57,10 +57,14 @@ deleteFromCart: (req, res) => {
     sequelize.query(`
     DELETE FROM shopping_cart 
     WHERE fk_vinyl_id = ${ id };
+    SELECT vr.vinyl_id, vr.album_name, vr.artist_name, vr.price, vr.image, sc.quantity 
+    FROM vinyl_records vr 
+    INNER JOIN shopping_cart sc ON vr.vinyl_id = sc.fk_vinyl_id
+    ORDER BY vr.artist_name ASC;
     `)
     .then((dbResult) => {
         console.log(dbResult[0])
-        return res.status(200).send(this.getCart)
+        return res.status(200).send(dbResult[0])
     })
     .catch((err) => console.log(err));
 },
