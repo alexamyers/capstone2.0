@@ -219,14 +219,16 @@ a, h2, button {
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
+  margin-top: 14px;
 }
 
 .quantity-container button {
   padding: 7px;
 }
 
-.quantity-container button p {
-  height: 50px;
+.quantity-container span {
+  margin-left: 5px;
+  margin-right: 5px;
 }
 
 .delete-button {
@@ -241,6 +243,8 @@ a, h2, button {
 .delete-button:hover {
   background: #ff5031
 }
+
+
 
 
 

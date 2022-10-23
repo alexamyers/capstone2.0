@@ -8,7 +8,7 @@ import Footer from './Footer';
 function Cart() {
  
    const [inventory, setInventory] = useState([])
-   const [albumQuantity, setAlbumQuantity] = useState({})
+   
  
    useEffect(() => {
        axios.get('/showCart')
@@ -31,7 +31,6 @@ function Cart() {
    function increaseQuantity(id, quantity) {
     axios.put(`/showCartIncrease/${ id }/${quantity}`, { id, quantity })
     .then((res) => {
-        setAlbumQuantity(res.data);
         console.log(res.data);
     })
     .catch((err) => console.log(err));
@@ -45,7 +44,7 @@ function Cart() {
     .catch((err) => console.log(err));
    };
 
-    const displayRecords = useMemo(() => inventory.map((inventoryInfo) => {
+    const displayRecords = inventory.map((inventoryInfo) => {
        const { vinyl_id, album_name, artist_name, price, image, quantity} = inventoryInfo;
 
        return(
@@ -58,14 +57,15 @@ function Cart() {
             </div>
             <div className='quantity-container'>
                 <button className='checkout-buttons' onClick={() => increaseQuantity(vinyl_id, quantity)}>+</button>
-                <p>{ quantity }</p>
+                <span>{  quantity }</span>
                 <button className='checkout-buttons' onClick={() => decreaseQuantity(vinyl_id, quantity)}>-</button>
             </div>
             <br/>
             <button className='delete-button' onClick={() => removeFromCart(vinyl_id)}>REMOVE</button>
         </div>
        )
-   }), [inventory])
+   });
+
 
    return (
         <div className='shopping-cart'>
@@ -81,7 +81,7 @@ function Cart() {
                 <input/>
                 <label>STATE</label>
                 <input/>
-                <label>ZIPCODE</label>
+                <label>ZIP-CODE</label>
                 <input/>
                 <label>CREDIT CARD NUMBER</label>
                 <input/>
